@@ -1,10 +1,10 @@
 var s = Object.defineProperty;
-var o = (i, t, e) => t in i ? s(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
-var r = (i, t, e) => (o(i, typeof t != "symbol" ? t + "" : t, e), e);
-class l {
+var l = (i, t, e) => t in i ? s(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
+var c = (i, t, e) => (l(i, typeof t != "symbol" ? t + "" : t, e), e);
+class u {
   constructor(t) {
-    r(this, "controlelements", []);
-    r(this, "controlselector", "[data-matchmedia-query]");
+    c(this, "controlelements", []);
+    c(this, "controlselector", "[data-matchmedia-query]");
     const e = this.parseOptions(t);
     e.initiateElements && (this.InitiateElements(e.parent), window.addEventListener("global-markupchange", (a) => {
       var n;
@@ -31,15 +31,16 @@ class l {
     if (!a)
       return;
     const n = window.matchMedia(a);
-    n.matches && this.addAttribute(e), n.onchange = (c) => {
-      c.matches && this.addAttribute(e);
-    };
+    this.onMatchChange(n.matches, e), n && (n.onchange = (r) => {
+      this.onMatchChange(r.matches, e);
+    });
   }
-  addAttribute(t) {
-    const [e, a] = (t.getAttribute("data-matchmedia-attribute") || "").split(",");
-    t.getAttribute(e) + "" != a + "" && t.setAttribute(e, a);
+  onMatchChange(t, e) {
+    const [a, n, r] = (e.getAttribute("data-matchmedia-attribute") || "").split(",");
+    var o = r + "" == "true";
+    t ? e.getAttribute(a) + "" != n + "" && e.setAttribute(a, n) : o && e.removeAttribute(a);
   }
 }
 export {
-  l as default
+  u as default
 };

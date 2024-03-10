@@ -5,7 +5,7 @@ export default class MatchMediaAttributeManager {
     private parseOptions;
     InitiateElements(parent?: HTMLElement): void;
     private bindEvents;
-    private addAttribute;
+    private onMatchChange;
 }
 interface MatchMediaAttributeManagerInitiationOptions {
     parent?: HTMLElement;
