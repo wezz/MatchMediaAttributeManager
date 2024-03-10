@@ -1,0 +1,48 @@
+{
+  "name": "@wezz/matchmediaattributemanager",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/matchmediaattributemanager.umd.cjs",
+  "module": "./dist/matchmediaattributemanager.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/matchmediaattributemanager.js",
+      "require": "./dist/matchmediaattributemanager.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prepare": "npm run build",
+    "pack": "npm run build",
+    "trypublish": "npm publish --access public || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wezz/MatchMediaAttributeManager"
+  },
+  "author": "Wezz Balk <github@wezz.se> (https://github.com/wezz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wezz/MatchMediaAttributeManager/issues"
+  },
+  "homepage": "https://github.com/wezz/MatchMediaAttributeManager",
+  "keywords": [
+    "attributes",
+    "attribute",
+    "matchmedia",
+    "media query",
+    "aria",
+    "accessibility"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.14.2",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.2"
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" src="/src/main.ts"></script>
+    <style>
+      
+      body {
+        font-family: sans-serif;
+        margin:0 auto;
+        padding: 2rem 1rem;
+        max-width: 800px;
+      }
+
+      button {
+        cursor: pointer;
+        background:rgba(0,0,0,0);
+        border:3px solid #666;
+        border-radius:3px;
+        padding:.5rem;
+        margin:0 0 1rem;
+        transition: all .10s ease;
+      }
+      button:hover {
+        background:rgba(0,0,0,.1);
+        border-color:999;
+      }
+
+      [aria-hidden="true"] {
+        display:none;
+      }
+
+      .exampletarget {
+        border:1px solid #ccc;
+        padding:1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1>Match Media Attribute Manager Examples</h1>
+      <p>This page shows different examples of how the manager works.</p>
+  </div>
+  
+
+  <div id="examples">
+    <section>
+      <h2>Set attribute once or reset attribute if changed</h2>
+      <h3>Show element in tablet but not mobile</h3>
+      <p>This should be hidden in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(max-width: 768px)" data-matchmedia-attribute="aria-hidden,true">
+        Visible!
+      </div>
+
+      <h3>Hide element in tablet but not mobile</h3>
+      <p>This should be shown in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(min-width: 768px)" data-matchmedia-attribute="aria-hidden,true">
+        Visible!
+      </div>
+
+      <h3>Element is aria-hidden="false" by default but is set to be hidden in mobile</h3>
+      <p>This should be hidden in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(max-width: 768px)" aria-hidden="false" data-matchmedia-attribute="aria-hidden,true">
+        Visible!
+      </div>
+
+      <h2>Remove attribute if query no longer matches</h2>
+      <h3>Show element in tablet but not mobile</h3>
+      <p>This should be hidden in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(max-width: 768px)" data-matchmedia-attribute="aria-hidden,true,true">
+        
+        Visible!
+      </div>
+
+      <h3>Hide element in tablet but not mobile</h3>
+      <p>This should be shown in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(min-width: 768px)" data-matchmedia-attribute="aria-hidden,true,true">
+        Visible!
+      </div>
+
+      <h3>Element is aria-hidden="false" by default but is set to be hidden in mobile</h3>
+      <p>This should be hidden in mobile</p>
+      <div class="exampletarget" data-matchmedia-query="(max-width: 768px)" aria-hidden="false" data-matchmedia-attribute="aria-hidden,true,true">
+        Visible!
+      </div>
+
+      
+    </section>
+  </body>
+</html>
