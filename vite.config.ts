@@ -9,8 +9,12 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "matchmediaattributemanager",
-      fileName: "matchmediaattributemanager",
+      fileName: "index",
     },
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      rollupTypes: true,
+    }),
+  ],
 });
