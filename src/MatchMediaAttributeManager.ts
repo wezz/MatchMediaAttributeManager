@@ -25,7 +25,7 @@
   }
   public InitiateElements(parent: HTMLElement = document.body) {
     const controlElements = [].slice.call(
-      parent.querySelectorAll(this.controlselector)
+      parent.querySelectorAll(this.controlselector),
     ) as HTMLElement[];
     const newElements = controlElements.filter((elm) => {
       return (elm as any)["MatchMediaAttributeManager"] !== "activated";
@@ -36,7 +36,7 @@
     });
     this.controlelements = ([] as HTMLElement[]).concat(
       this.controlelements,
-      newElements
+      newElements,
     );
   }
   private bindEvents(orgelm: Element) {
@@ -58,7 +58,7 @@
     const [attribute, value, removeOption] = (
       elm.getAttribute("data-matchmedia-attribute") || ""
     ).split(",");
-    var removeWhenNotMatched = removeOption + "" === "true";
+    const removeWhenNotMatched = removeOption + "" === "true";
     if (matches) {
       if (elm.getAttribute(attribute) + "" !== value + "") {
         elm.setAttribute(attribute, value);
@@ -72,5 +72,5 @@
 }
 interface MatchMediaAttributeManagerInitiationOptions {
   parent?: HTMLElement;
-  initiateElements?: Boolean;
+  initiateElements?: boolean;
 }

@@ -1,6 +1,6 @@
 var s = Object.defineProperty;
 var l = (i, t, e) => t in i ? s(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
-var c = (i, t, e) => (l(i, typeof t != "symbol" ? t + "" : t, e), e);
+var c = (i, t, e) => l(i, typeof t != "symbol" ? t + "" : t, e);
 class u {
   constructor(t) {
     c(this, "controlelements", []);
@@ -36,8 +36,7 @@ class u {
     });
   }
   onMatchChange(t, e) {
-    const [a, n, r] = (e.getAttribute("data-matchmedia-attribute") || "").split(",");
-    var o = r + "" == "true";
+    const [a, n, r] = (e.getAttribute("data-matchmedia-attribute") || "").split(","), o = r + "" == "true";
     t ? e.getAttribute(a) + "" != n + "" && e.setAttribute(a, n) : o && e.removeAttribute(a);
   }
 }
