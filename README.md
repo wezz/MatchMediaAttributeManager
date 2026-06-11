@@ -56,6 +56,14 @@ If something else adds or changes the attribute```aria-hidden``` to be ```aria-h
 * [ARIAManager](https://github.com/wezz/ARIAManager) - A script that handles the relationship between ```aria-controls``` and ```aria-hidden```
 * [ARIATabManager](https://github.com/wezz/ARIATabManager) - A script that combined with ARIAManager enables tabbing behavior with only additional attributes
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md). This project follows
+[Keep a Changelog](https://keepachangelog.com/) and
+[Semantic Versioning](https://semver.org/). On release, move the
+`## [Unreleased]` entries into a dated version section, bump `version`, run
+`npm run check:exports`, then `npm publish`.
+
 ## Development & Demo
 Clone this repo
 Run
